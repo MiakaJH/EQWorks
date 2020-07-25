@@ -1,2 +1,2 @@
-web: gunicorn app:eqworks
+web: gunicorn app:app
 heroku ps:scale web=1
