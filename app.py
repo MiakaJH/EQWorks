@@ -10,8 +10,6 @@ from RateLimit import RateLimit
 from flask import Flask
 from flask_cors import CORS, cross_origin
 
-from app.main import app
-
 # web app
 app = Flask(__name__)
 cors = CORS(app, resources={r"/foo": {"origins": "*"}})
@@ -34,9 +32,6 @@ stats_da_poi = RateLimit(20, 60*24*60)
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def index():
     return 'Welcome to EQ Works 😎'
-
-if __name__ == '__main__':
-    app.run()
 
 @app.route('/events/hourly')
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
