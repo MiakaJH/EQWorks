@@ -33,6 +33,9 @@ stats_da_poi = RateLimit(20, 60*24*60)
 def index():
     return 'Welcome to EQ Works 😎'
 
+if __name__ == '__main__':
+    app.run()
+
 @app.route('/events/hourly')
 @cross_origin(origin='*',headers=['Content-Type','Authorization'])
 def events_hourly():
